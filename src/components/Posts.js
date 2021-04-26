@@ -59,7 +59,7 @@ export class Posts extends Component{
   _setRemoveButton(button){
     button.classList.remove('button-primary');
     button.classList.add('button-danger');
-    button.textContent = 'удалить'
+    button.textContent = 'удалить из избранного'
   }
 
   _adCards(container, data){
