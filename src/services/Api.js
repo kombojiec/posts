@@ -27,6 +27,11 @@ class Api{
     .then(res => this._checkResponse(res))
   }
 
+  getPostById(id){
+    return fetch(this._url + `/posts/${id}.json`)
+    .then(res => this._checkResponse(res))
+  }
+
 }
 
 export const api = new Api('https://posts-23845-default-rtdb.firebaseio.com');

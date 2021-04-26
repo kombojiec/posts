@@ -16,7 +16,7 @@ export class CreatePost extends Component{
         date: (new Date).toLocaleDateString(),
         ...this._form.getData()}
       api.createPost(formData)
-      .then(res => console.log(res))
+      .then(res => alert('Пост был создан.'))
       .catch(err => console.log(err))
       this._form._form.reset();
     }else{
