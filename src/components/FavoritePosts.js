@@ -51,13 +51,17 @@ export class FavoritePosts extends Component{
 
   _renderPostsName(){
     const favorites = JSON.parse(localStorage.getItem('favorites'));
-    this._element.insertAdjacentHTML('beforeend', this._createList(favorites));
-    this._element.querySelectorAll('[data-id]').forEach(element => {
-      this._addListener(element);
-    })
+    if(favorites){
+      this._element.insertAdjacentHTML('beforeend', this._createList(favorites));
+      this._element.querySelectorAll('[data-id]').forEach(element => {
+        this._addListener(element);
+      })
+    }else{
+      this._element.insertAdjacentHTML('beforeend', `<h2 class='center'>Вы пока ничего не добавили.</h2>`);
+    }
 
   }
-
+  // `<h2 class='center'>Вы пока ничего не добавили.</h2>`
   _onShow(){
     this._renderPostsName();
   }
